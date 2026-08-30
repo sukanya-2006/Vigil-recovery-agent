@@ -1,0 +1,95 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// A customer who has made payment attempts with the merchant.
+// successfulPayments / failedPayments are running counters the agent
+// uses as "does this person usually pay?" signal when diagnosing a failure.
+model Customer {
+  id                 Int      @id @default(autoincrement())
+  name               String
+  successfulPayments Int      @default(0)
+  failedPayments     Int      @default(0)
+  createdAt          DateTime @default(now())
+
+  transactions Transaction[]
+}
+
+// One payment attempt that is currently at risk (or has been resolved).
+//
+// status and failureReason are plain strings, not Prisma enums.
+// SQLite doesn't support native enums, and simulating them adds migration
+// friction for very little benefit at this scale -- we validate the
+// allowed values in application code instead (see src/constants.js).
+//
+// isControlGroup exists from day one, not bolted on later: it's what lets
+// us prove the agent's recovered revenue is *caused* by the agent, not
+// revenue that would have come back on its own. Roughly 20% of at-risk
+// transactions will be flagged true at generation time and the agent will
+// skip them entirely -- see the seed script.
+model Transaction {
+  id             Int      @id @default(autoincrement())
+  customer       Customer @relation(fields: [customerId], references: [id])
+  customerId     Int
+  amount         Float
+  currency       String   @default("INR")
+
+  // FAILED | RECOVERED | LOST | PENDING_REVIEW | RECOVERING
+  status         String   @default("FAILED")
+
+  // INSUFFICIENT_FUNDS | ISSUER_DECLINED | EXPIRED_CARD | NETWORK_TIMEOUT | THREE_DS_FAILURE | OTHER
+  failureReason  String
+
+  isControlGroup Boolean  @default(false)
+  retryCount     Int      @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  paymentAttempts PaymentAttempt[]
+  agentActions    AgentAction[]
+}
+
+// Every individual retry/attempt made against a transaction.
+// Kept separate from Transaction (rather than just bumping retryCount)
+// because the *sequence* of outcomes over time is itself a feature the
+// decision engine can use later (e.g. "failed twice, same reason, don't retry a third time").
+model PaymentAttempt {
+  id            Int         @id @default(autoincrement())
+  transaction   Transaction @relation(fields: [transactionId], references: [id])
+  transactionId Int
+  attemptNumber Int
+
+  // SUCCESS | FAILURE
+  outcome String
+
+  createdAt DateTime @default(now())
+}
+
+// The audit trail. This table is arguably the single most scrutinized
+// part of the whole project, because Razorpay's brief explicitly names
+// "audit trail" and "compliant escalation" as things they check for.
+// Every decision the agent makes -- including deciding to do nothing --
+// gets a row here, with the reasoning in plain English.
+model AgentAction {
+  id            Int         @id @default(autoincrement())
+  transaction   Transaction @relation(fields: [transactionId], references: [id])
+  transactionId Int
+
+  // RETRY | REMINDER | UPDATE_METHOD | ESCALATE | STOP | NO_ACTION
+  actionType String
+
+  reasoning     String   // human-readable, e.g. "8/9 past payments succeeded, temporary issuer decline"
+  recoveryScore Float?   // 0-1, how likely this action is to recover the money
+  expectedValue Float?   // recoveryScore * amount - cost of this action
+
+  // SUCCESS | FAILURE | PENDING -- null until the simulated execution resolves
+  result String?
+
+  createdAt DateTime @default(now())
+}
