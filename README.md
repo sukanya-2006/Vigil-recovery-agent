@@ -33,4 +33,4 @@
   <rect x="290" y="380" width="180" height="56" rx="10" fill="#FFFFFF" stroke="#14213D" stroke-width="1.5"/>
   <text x="380" y="402" text-anchor="middle" font-size="14" font-weight="700" fill="#14213D">Audit Log</text>
   <text x="380" y="420" text-anchor="middle" font-size="11" fill="#6B7590">Every decision, reasoning, and result</text>
-</svg>
+</svg> 
