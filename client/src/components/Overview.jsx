@@ -41,7 +41,7 @@
 //           <div className="label">Agent lift</div>
 //           <div className="value">+{(summary.lift * 100).toFixed(1)}pp</div>
 //           <div className="sub">recovery rate vs. doing nothing</div>
-//         </div>
+//         </ddiv>
 //         <div className="card">
 //           <div className="label">Still retrying</div>
 //           <div className="value">{summary.stillRetrying}</div>

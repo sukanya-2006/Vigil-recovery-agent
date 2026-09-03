@@ -87,8 +87,22 @@ function diagnoseAndDecide(transaction) {
     reasoning = `Recovery score ${recoveryScore.toFixed(2)} is too low to justify intervening. Stopping to avoid wasting a retry/reminder on an unlikely outcome.`;
   }
 
-  const cost = ACTION_COST[actionType] ?? 0;
-  const expectedValue = recoveryScore * amount - cost;
+   let cost = ACTION_COST[actionType] ?? 0;
+  let expectedValue = recoveryScore * amount - cost;
+
+  // Cost-aware override: a confident decision can still be a bad one if
+  // what it costs to attempt (gateway fees, customer annoyance, a human
+  // reviewer's time) outweighs what it's expected to recover. This is
+  // what separates "we predict this will probably work" from "we decided
+  // this is actually worth doing" -- the two aren't automatically the
+  // same thing once cost enters the picture.
+  const costSensitiveActions = [ACTION_TYPE.RETRY, ACTION_TYPE.REMINDER, ACTION_TYPE.ESCALATE];
+  if (costSensitiveActions.includes(actionType) && expectedValue <= 0) {
+    reasoning = `Cost-aware override: the original decision was ${actionType}, but its expected value (score ${recoveryScore.toFixed(2)} × ₹${amount} − cost ₹${cost} = ₹${expectedValue.toFixed(0)}) is not positive. Stopping instead of spending effort on a net-negative outcome.`;
+    actionType = ACTION_TYPE.STOP;
+    cost = 0;
+    expectedValue = 0;
+  }
 
   return { recoveryScore, actionType, reasoning, expectedValue };
 }
