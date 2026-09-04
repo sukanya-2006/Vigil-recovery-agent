@@ -1,0 +1,191 @@
+/* MockCheckout.css
+   Colors match Razorpay's confirmed brand palette:
+   Prussian Blue #012652 (deep navy), Dodger Blue #0D94FB (action blue), white.
+   Not their logo/typeface -- brand-inspired styling only.
+*/
+
+.mock-checkout-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+.mock-checkout-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(1, 38, 82, 0.15);
+  overflow: hidden;
+}
+
+.mock-checkout-header {
+  background: linear-gradient(135deg, #012652 0%, #0D94FB 140%);
+  color: #ffffff;
+  padding: 28px 24px 22px;
+  position: relative;
+}
+
+.mock-checkout-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.mock-checkout-header h2 {
+  margin: 4px 0 6px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.mock-checkout-amount {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.mock-checkout-form {
+  padding: 22px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mock-checkout-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #012652;
+}
+
+.mock-checkout-form input,
+.mock-checkout-form select {
+  border: 1.5px solid #d7e3f0;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #012652;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.mock-checkout-form input:focus,
+.mock-checkout-form select:focus {
+  border-color: #0D94FB;
+}
+
+.mock-checkout-legend {
+  font-size: 12px;
+  color: #5b7fa6;
+  margin-top: -6px;
+}
+
+.mock-checkout-pay-btn {
+  margin-top: 6px;
+  background: #0D94FB;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.mock-checkout-pay-btn:hover {
+  background: #0b82db;
+}
+
+.mock-checkout-error {
+  color: #c0392b;
+  font-size: 12px;
+}
+
+.mock-checkout-timeline {
+  padding: 22px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mock-checkout-row {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.mock-checkout-row.active,
+.mock-checkout-row.done {
+  opacity: 1;
+}
+
+.mock-checkout-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d7e3f0;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.mock-checkout-row.active .mock-checkout-dot {
+  background: #0D94FB;
+  box-shadow: 0 0 0 4px rgba(13, 148, 251, 0.2);
+  animation: pulse 1s infinite;
+}
+
+.mock-checkout-row.done .mock-checkout-dot {
+  background: #012652;
+}
+
+.mock-checkout-row.tone-warn .mock-checkout-dot { background: #e0a800; }
+.mock-checkout-row.tone-success .mock-checkout-dot { background: #1a9e5c; }
+.mock-checkout-row.tone-fail .mock-checkout-dot { background: #c0392b; }
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(13, 148, 251, 0.35); }
+  70% { box-shadow: 0 0 0 8px rgba(13, 148, 251, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(13, 148, 251, 0); }
+}
+
+.mock-checkout-row-text {
+  font-size: 14px;
+  color: #012652;
+  font-weight: 600;
+}
+
+.mock-checkout-detail {
+  font-size: 12px;
+  font-weight: 400;
+  color: #5b7fa6;
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
+.mock-checkout-reset-btn {
+  margin-top: 14px;
+  background: none;
+  border: 1.5px solid #0D94FB;
+  color: #0D94FB;
+  border-radius: 6px;
+  padding: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mock-checkout-reset-btn:hover {
+  background: #eaf5ff;
+}

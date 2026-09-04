@@ -24,6 +24,12 @@ export const api = {
   getTransaction: (id) => request(`/transactions/${id}`),
   getAudit: (limit = 100) => request(`/audit?limit=${limit}`),
   runAgent: () => request('/agent/run', { method: 'POST' }),
+  generateMessage: (id) => request(`/agent/message/${id}`, { method: 'POST' }),
   reviewTransaction: (id, decision) =>
     request(`/agent/review/${id}`, { method: 'POST', body: JSON.stringify({ decision }) }),
+  simulateDemoPayment: ({ cardNumber, amount, customerName }) =>
+    request('/demo/simulate', {
+      method: 'POST',
+      body: JSON.stringify({ cardNumber, amount, customerName }),
+    }),
 };

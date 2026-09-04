@@ -3,6 +3,7 @@ const { runAgentBatch, resolveControlGroup } = require('../services/agent');
 const { decideApprovedAction } = require('../services/decisionEngine');
 const { simulateExecution } = require('../services/outcomeSimulator');
 const { TRANSACTION_STATUS, ACTION_TYPE } = require('../constants');
+const { generateCustomerMessage } = require('../services/messageGenerator');
 
 module.exports = (prisma) => {
   const router = express.Router();
@@ -99,6 +100,31 @@ module.exports = (prisma) => {
     } catch (err) {
       console.error(err);
       res.status(500).json({ error: 'Review action failed' });
+    }
+  });
+
+    router.post('/message/:id', async (req, res) => {
+    try {
+      const id = Number(req.params.id);
+      const transaction = await prisma.transaction.findUnique({
+        where: { id },
+        include: {
+          customer: true,
+          agentActions: { orderBy: { createdAt: 'desc' }, take: 1 },
+        },
+      });
+      if (!transaction) return res.status(404).json({ error: 'Not found' });
+
+      const latestAction = transaction.agentActions[0];
+      if (!latestAction) {
+        return res.status(400).json({ error: 'No agent action recorded for this transaction yet' });
+      }
+
+      const result = await generateCustomerMessage(transaction, latestAction.actionType);
+      res.json(result);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Message generation failed' });
     }
   });
 

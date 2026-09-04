@@ -30,6 +30,28 @@ const UPDATE_METHOD_SUCCESS_RATE = 0.7;
 // agent's doing, which wouldn't be honest.
 const ORGANIC_RECOVERY_RATE = 0.15;
 
+
+// outcomeSimulator.js
+
+function trueSuccessProbability(tx, action, ruleScore) {
+  let p = ruleScore; // start from the rules engine's estimate
+
+  // --- signal the rules engine does NOT use ---
+  const spacing = tx.retrySpacingHours ?? 24;
+  if (spacing >= 18 && spacing <= 30) p += 0.08;      // issuer cooldown window
+  else if (spacing < 6) p -= 0.10;                     // too-soon retry
+
+  if (tx.isWeekend && action === "send_reminder") p -= 0.05;
+
+  if (tx.customerSuccessStreak >= 3) p += 0.06;
+  else if (tx.customerSuccessStreak === 0) p -= 0.04;
+
+  // small irreducible noise so it isn't perfectly deterministic either way
+  p += (Math.random() - 0.5) * 0.06;
+
+  return Math.max(0, Math.min(1, p));
+}
+
 /**
  * Executes a chosen action against a transaction and returns whether it
  * succeeded. For RETRY/REMINDER we treat the decision engine's recovery
@@ -43,8 +65,15 @@ function simulateExecution(transaction, actionType, recoveryScore) {
 
   switch (actionType) {
     case ACTION_TYPE.RETRY:
-    case ACTION_TYPE.REMINDER:
-      return rng() < recoveryScore ? 'SUCCESS' : 'FAILURE';
+case ACTION_TYPE.REMINDER: {
+  const trueProbability = trueSuccessProbability(
+    transaction,
+    actionType,
+    recoveryScore
+  );
+
+  return rng() < trueProbability ? 'SUCCESS' : 'FAILURE';
+}
     case ACTION_TYPE.UPDATE_METHOD:
       return rng() < UPDATE_METHOD_SUCCESS_RATE ? 'SUCCESS' : 'FAILURE';
     case ACTION_TYPE.ESCALATE:

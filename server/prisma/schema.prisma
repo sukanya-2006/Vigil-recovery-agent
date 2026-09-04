@@ -85,8 +85,14 @@ model AgentAction {
   actionType String
 
   reasoning     String   // human-readable, e.g. "8/9 past payments succeeded, temporary issuer decline"
-  recoveryScore Float?   // 0-1, how likely this action is to recover the money
+  recoveryScore Float?   // 0-1, how likely this action is to recover the money (final blended score)
   expectedValue Float?   // recoveryScore * amount - cost of this action
+
+  // The rules-engine score and ML-service score that were blended into
+  // recoveryScore, kept separately so the audit trail can show both --
+  // this is what proves the ML layer actually influenced the decision.
+  mlScore       Float?   // 0-1, null if the ML service was unavailable for this decision
+  scoringMethod String?  // "blended" | "rules_fallback"
 
   // SUCCESS | FAILURE | PENDING -- null until the simulated execution resolves
   result String?

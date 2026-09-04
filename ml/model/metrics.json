@@ -1,0 +1,11 @@
+{
+  "n_train": 474,
+  "n_test": 159,
+  "model_auc": 0.9939,
+  "model_pr_auc": 0.9951,
+  "model_brier": 0.0247,
+  "rules_auc": 0.7759,
+  "rules_pr_auc": 0.8839,
+  "rules_brier": 0.1986,
+  "auc_lift": 0.218
+}

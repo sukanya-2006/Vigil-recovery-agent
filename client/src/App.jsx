@@ -2,7 +2,9 @@ import { useState } from 'react';
 import Overview from './components/Overview.jsx';
 import TransactionsTable from './components/TransactionsTable.jsx';
 import AuditLog from './components/AuditLog.jsx';
+import MockCheckout from './components/MockCheckout.jsx';
 import { api } from './api';
+
 
 export default function App() {
   const [tab, setTab] = useState('overview');
@@ -43,12 +45,16 @@ export default function App() {
         <button className={`tab ${tab === 'audit' ? 'active' : ''}`} onClick={() => setTab('audit')}>
           Audit log
         </button>
+        <button className={`tab ${tab === 'demo' ? 'active' : ''}`} onClick={() => setTab('demo')}>
+        Live Demo
+         </button>
       </div>
 
       <div className="tab-panel">
         {tab === 'overview' && <Overview refreshKey={refreshKey} onRunAgent={handleRunAgent} running={running} />}
         {tab === 'transactions' && <TransactionsTable refreshKey={refreshKey} bumpRefresh={bumpRefresh} />}
         {tab === 'audit' && <AuditLog refreshKey={refreshKey} />}
+        {tab === 'demo' && <MockCheckout onComplete={bumpRefresh} />}
       </div>
     </div>
   );

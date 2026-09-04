@@ -19,6 +19,7 @@ app.get('/health', (req, res) => {
 
 app.use('/api', require('./routes/transactions')(prisma));
 app.use('/api/agent', require('./routes/agent')(prisma));
+app.use('/api/demo', require('./routes/demo')(prisma));
 
 const PORT = process.env.PORT || 4000;
 
