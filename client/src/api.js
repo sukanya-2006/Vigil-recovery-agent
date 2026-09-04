@@ -1,7 +1,8 @@
 // Every fetch call to the backend goes through here -- one place to
 // change the base URL later (e.g. when deploying), instead of hunting
 // through every component for a hardcoded localhost address.
-const BASE_URL = 'http://localhost:4000/api';
+const BASE_URL =
+  import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
 
 async function request(path, options) {
   const res = await fetch(`${BASE_URL}${path}`, {
