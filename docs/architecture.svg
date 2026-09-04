@@ -1,36 +1,109 @@
-<svg width="760" height="480" viewBox="0 0 760 480" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
-  <rect width="760" height="480" fill="#F6F8FC"/>
+<svg viewBox="0 0 980 900" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Segoe UI, sans-serif" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo0ZDlkZjFmZi1mOGI4LTQ2MTEtODZjNy0zNGZjNDEyYjg2OGEAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaPSJ8YffeT5inav7gMOadtwAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDozNDE2NmJiNS1mODdlLTQxZjQtYTQ2ZS04NzE0MDM3NWQzNTFscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoSvjpGBlNCRzBGfKsfkLZaAAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgg3x7EhPhOTKkiAgK2JnZo9ZPPWpL+Xc9DlRU++wJvu8SkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaCx/+NJzw7lVtBB41yvdHacAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCCvY28fVofSk0O4uJwzpElkEu2SPJoV1f/HnCegmVMf3WRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBinZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjRkOWRmMWZmLWY4YjgtNDYxMS04NmM3LTM0ZmM0MTJiODY4YS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjEyYzMwZjgwLWRkOTctNGM2YS05MDE1LTZhZWRmZmUxYTNkZHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCDfHsSE+E5MqSICArYmdmj1k89akv5dz0OVFT77Am+7xKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggysB1Ex7L+HfWxWoUBR0KKD2H/OLJkr22vJKqSnuPzYaiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggIdBe4WhPQfB9gV06rb+8hbhXOlLOrPjOdp4vcGyQIiR0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQEMj67ReTKfkwIuKe72Rms6Lj73VhkJpDZAI0IR7N7xnKK/mwy6TKT+bT1a25k70Uko8gGqB03sMnE3hsmgAh58=</c2pa:manifest></metadata>
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M2 1L8 5L2 9" fill="none" stroke="#5B6472" stroke-width="1.5"/>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5b7fa6"/>
+    </marker>
+    <marker id="arrowGold" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#a97b0a"/>
     </marker>
   </defs>
-  <rect x="290" y="20" width="180" height="56" rx="10" fill="#FFFFFF" stroke="#3E5FF0" stroke-width="1.5"/>
-  <text x="380" y="42" text-anchor="middle" font-size="14" font-weight="700" fill="#14213D">Dashboard</text>
-  <text x="380" y="60" text-anchor="middle" font-size="11" fill="#6B7590">React (Overview / Transactions / Audit)</text>
-  <line x1="380" y1="76" x2="380" y2="106" stroke="#5B6472" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <rect x="290" y="110" width="180" height="56" rx="10" fill="#FFFFFF" stroke="#3E5FF0" stroke-width="1.5"/>
-  <text x="380" y="132" text-anchor="middle" font-size="14" font-weight="700" fill="#14213D">Express API</text>
-  <text x="380" y="150" text-anchor="middle" font-size="11" fill="#6B7590">/api/summary, /transactions, /agent</text>
-  <rect x="560" y="110" width="160" height="56" rx="10" fill="#FFFFFF" stroke="#6B7590" stroke-width="1.5"/>
-  <text x="640" y="132" text-anchor="middle" font-size="14" font-weight="700" fill="#14213D">SQLite DB</text>
-  <text x="640" y="150" text-anchor="middle" font-size="11" fill="#6B7590">Prisma ORM</text>
-  <line x1="470" y1="138" x2="556" y2="138" stroke="#5B6472" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <line x1="380" y1="166" x2="380" y2="196" stroke="#5B6472" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <rect x="270" y="200" width="220" height="56" rx="10" fill="#FFFFFF" stroke="#3E5FF0" stroke-width="1.5"/>
-  <text x="380" y="222" text-anchor="middle" font-size="14" font-weight="700" fill="#14213D">Decision Engine</text>
-  <text x="380" y="240" text-anchor="middle" font-size="11" fill="#6B7590">Rules + recovery score + cost-aware check</text>
-  <line x1="330" y1="256" x2="245" y2="284" stroke="#5B6472" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <line x1="430" y1="256" x2="525" y2="284" stroke="#5B6472" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <rect x="140" y="290" width="200" height="56" rx="10" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="240" y="312" text-anchor="middle" font-size="14" font-weight="700" fill="#14213D">Outcome Simulator</text>
-  <text x="240" y="330" text-anchor="middle" font-size="11" fill="#6B7590">Executes RETRY / REMINDER / UPDATE</text>
-  <rect x="420" y="290" width="220" height="56" rx="10" fill="#FFFFFF" stroke="#D97706" stroke-width="1.5"/>
-  <text x="530" y="312" text-anchor="middle" font-size="14" font-weight="700" fill="#14213D">Human Review Queue</text>
-  <text x="530" y="330" text-anchor="middle" font-size="11" fill="#6B7590">Approve / reject uncertain cases</text>
-  <line x1="270" y1="346" x2="345" y2="376" stroke="#5B6472" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <line x1="500" y1="346" x2="420" y2="376" stroke="#5B6472" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <rect x="290" y="380" width="180" height="56" rx="10" fill="#FFFFFF" stroke="#14213D" stroke-width="1.5"/>
-  <text x="380" y="402" text-anchor="middle" font-size="14" font-weight="700" fill="#14213D">Audit Log</text>
-  <text x="380" y="420" text-anchor="middle" font-size="11" fill="#6B7590">Every decision, reasoning, and result</text>
+
+  <rect width="980" height="900" fill="#f4f7fb"/>
+
+  <!-- Title -->
+  <text x="490" y="38" text-anchor="middle" font-size="22" font-weight="800" fill="#012652">Winback — System Architecture</text>
+  <text x="490" y="60" text-anchor="middle" font-size="12" fill="#5b7fa6">React dashboard → Express API → decision engine → live ML call, with a rules-only fallback</text>
+
+  <!-- ===== Client layer ===== -->
+  <rect x="60" y="90" width="860" height="120" rx="14" fill="#ffffff" stroke="#d7e3f0" stroke-width="1.5"/>
+  <text x="80" y="115" font-size="13" font-weight="700" fill="#012652">CLIENT — React (Vite)</text>
+
+  <g font-size="11" fill="#012652">
+    <rect x="80" y="130" width="130" height="60" rx="8" fill="#eef4fb" stroke="#0D94FB"/>
+    <text x="145" y="155" text-anchor="middle" font-weight="700">Overview</text>
+    <text x="145" y="170" text-anchor="middle" fill="#5b7fa6" font-size="9.5">Recovered ₹, lift %</text>
+
+    <rect x="225" y="130" width="130" height="60" rx="8" fill="#eef4fb" stroke="#0D94FB"/>
+    <text x="290" y="155" text-anchor="middle" font-weight="700">Transactions</text>
+    <text x="290" y="170" text-anchor="middle" fill="#5b7fa6" font-size="9.5">filter, approve/reject</text>
+
+    <rect x="370" y="130" width="130" height="60" rx="8" fill="#eef4fb" stroke="#0D94FB"/>
+    <text x="435" y="155" text-anchor="middle" font-weight="700">Audit Log</text>
+    <text x="435" y="170" text-anchor="middle" fill="#5b7fa6" font-size="9.5">every decision, reasoning</text>
+
+    <rect x="515" y="130" width="180" height="60" rx="8" fill="#fff4d6" stroke="#e0a800"/>
+    <text x="605" y="155" text-anchor="middle" font-weight="700">Live Demo Checkout</text>
+    <text x="605" y="170" text-anchor="middle" fill="#8a6300" font-size="9.5">creates a real transaction</text>
+
+    <rect x="710" y="130" width="180" height="60" rx="8" fill="#0b1120"/>
+    <text x="800" y="155" text-anchor="middle" font-weight="700" fill="#3ddc84">Live Console</text>
+    <text x="800" y="170" text-anchor="middle" fill="#7c92ad" font-size="9.5">polls /audit, tails decisions</text>
+  </g>
+
+  <line x1="490" y1="210" x2="490" y2="245" stroke="#5b7fa6" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="505" y="232" font-size="10" fill="#5b7fa6">HTTP (fetch)</text>
+
+  <!-- ===== Express API ===== -->
+  <rect x="60" y="250" width="860" height="90" rx="14" fill="#ffffff" stroke="#d7e3f0" stroke-width="1.5"/>
+  <text x="80" y="273" font-size="13" font-weight="700" fill="#012652">BACKEND — Node.js + Express</text>
+  <text x="80" y="295" font-size="11" fill="#5b7fa6">/api/summary  /api/transactions  /api/audit  /api/agent/run  /api/agent/review/:id  /api/agent/message/:id  /api/demo/simulate</text>
+  <text x="80" y="315" font-size="10" fill="#7c92ad">Prisma ORM ↔ SQLite  ·  every decision also prints live to this process's terminal (agent@winback console)</text>
+
+  <line x1="490" y1="340" x2="490" y2="375" stroke="#5b7fa6" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ===== Decision Engine ===== -->
+  <rect x="60" y="380" width="860" height="140" rx="14" fill="#012652"/>
+  <text x="80" y="405" font-size="13" font-weight="700" fill="#ffffff">DECISION ENGINE — decisionEngine.js</text>
+
+  <g>
+    <rect x="90" y="420" width="220" height="80" rx="10" fill="#0D94FB"/>
+    <text x="200" y="445" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">1. Rules Score</text>
+    <text x="200" y="463" text-anchor="middle" font-size="9.5" fill="#eaf5ff">failure-reason base rate</text>
+    <text x="200" y="477" text-anchor="middle" font-size="9.5" fill="#eaf5ff">× customer reliability</text>
+
+    <text x="345" y="465" text-anchor="middle" font-size="20" fill="#ffffff">+</text>
+
+    <rect x="380" y="420" width="220" height="80" rx="10" fill="#e8b923"/>
+    <text x="490" y="445" text-anchor="middle" font-size="12" font-weight="700" fill="#012652">2. ML Score</text>
+    <text x="490" y="463" text-anchor="middle" font-size="9.5" fill="#4a3a06">live call to Python service</text>
+    <text x="490" y="477" text-anchor="middle" font-size="9.5" fill="#4a3a06">400ms timeout</text>
+
+    <text x="635" y="465" text-anchor="middle" font-size="20" fill="#ffffff">=</text>
+
+    <rect x="670" y="420" width="220" height="80" rx="10" fill="#ffffff"/>
+    <text x="780" y="445" text-anchor="middle" font-size="12" font-weight="700" fill="#012652">3. Blended Score</text>
+    <text x="780" y="463" text-anchor="middle" font-size="9.5" fill="#5b7fa6">→ action + cost-aware</text>
+    <text x="780" y="477" text-anchor="middle" font-size="9.5" fill="#5b7fa6">override check</text>
+  </g>
+
+  <!-- ML service branch -->
+  <line x1="490" y1="500" x2="490" y2="530" stroke="#e0a800" stroke-width="2" marker-end="url(#arrowGold)"/>
+  <text x="505" y="522" font-size="10" fill="#8a6300">POST /predict</text>
+
+  <rect x="330" y="535" width="320" height="90" rx="14" fill="#fff4d6" stroke="#e0a800" stroke-width="1.5"/>
+  <text x="490" y="560" text-anchor="middle" font-size="13" font-weight="700" fill="#8a6300">ML MICROSERVICE — Python / FastAPI</text>
+  <text x="490" y="580" text-anchor="middle" font-size="10" fill="#4a3a06">Calibrated gradient boosting classifier</text>
+  <text x="490" y="596" text-anchor="middle" font-size="10" fill="#4a3a06">trained on this project's own transaction history</text>
+  <text x="490" y="612" text-anchor="middle" font-size="9.5" font-style="italic" fill="#a97b0a">unreachable → falls back to rules-only, never crashes</text>
+
+  <line x1="490" y1="625" x2="490" y2="655" stroke="#5b7fa6" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ===== Execution / Outcome ===== -->
+  <rect x="60" y="660" width="860" height="90" rx="14" fill="#ffffff" stroke="#d7e3f0" stroke-width="1.5"/>
+  <text x="80" y="683" font-size="13" font-weight="700" fill="#012652">EXECUTION — outcomeSimulator.js</text>
+  <text x="80" y="705" font-size="11" fill="#5b7fa6">Simulates the chosen action's result using the blended probability. Updates Transaction status + retryCount.</text>
+  <text x="80" y="722" font-size="11" fill="#5b7fa6">Writes a full AgentAction row: rule score, ML score, blended score, scoring method, reasoning.</text>
+
+  <line x1="490" y1="750" x2="490" y2="780" stroke="#5b7fa6" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ===== Data + control group ===== -->
+  <rect x="60" y="785" width="410" height="90" rx="14" fill="#ffffff" stroke="#d7e3f0" stroke-width="1.5"/>
+  <text x="80" y="808" font-size="13" font-weight="700" fill="#012652">DATA — SQLite (via Prisma)</text>
+  <text x="80" y="828" font-size="10.5" fill="#5b7fa6">Customer · Transaction · PaymentAttempt · AgentAction</text>
+  <text x="80" y="846" font-size="10.5" fill="#5b7fa6">Source of truth for every dashboard view — one DB, three tabs, all consistent.</text>
+
+  <rect x="510" y="785" width="410" height="90" rx="14" fill="#f4f4f4" stroke="#c7c7c7" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="530" y="808" font-size="13" font-weight="700" fill="#555">CONTROL GROUP — bypasses the agent entirely</text>
+  <text x="530" y="828" font-size="10.5" fill="#777">A held-out slice of transactions the agent never touches.</text>
+  <text x="530" y="846" font-size="10.5" fill="#777">Its organic recovery rate is the baseline "lift" is measured against.</text>
 </svg>
