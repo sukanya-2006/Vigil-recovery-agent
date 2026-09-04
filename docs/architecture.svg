@@ -11,7 +11,7 @@
   <rect width="980" height="900" fill="#f4f7fb"/>
 
   <!-- Title -->
-  <text x="490" y="38" text-anchor="middle" font-size="22" font-weight="800" fill="#012652">Winback — System Architecture</text>
+  <text x="490" y="38" text-anchor="middle" font-size="22" font-weight="800" fill="#012652">RazorGuard — System Architecture</text>
   <text x="490" y="60" text-anchor="middle" font-size="12" fill="#5b7fa6">React dashboard → Express API → decision engine → live ML call, with a rules-only fallback</text>
 
   <!-- ===== Client layer ===== -->
