@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --bg: #F6F8FC;
   --surface: #FFFFFF;
   --border: #E6E9F2;
@@ -323,4 +323,29 @@ body {
   font-size: 14px;
   color: var(--text-soft);
   padding: 24px 0;
+} */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Poppins', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --color-indigo-brand: #3E5FF0;
+  --color-indigo-light: #EEF1FE;
+  --color-indigo-mid: #C7CFFB;
+}
+
+* {
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
+
+html, body, #root {
+  height: 100%;
 }
