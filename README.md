@@ -3,7 +3,7 @@
 
 Built for Razorpay's AI Buildathon — Track 03: AI Revenue Recovery.
 
-Winback is an agent that looks at a batch of failed payments, decides which
+RazorGuard is an agent that looks at a batch of failed payments, decides which
 ones are worth chasing and how, actually attempts the recovery, and keeps a
 complete, readable log of every decision it made and why — including the
 ones it chose not to act on.
@@ -13,6 +13,11 @@ ones it chose not to act on.
 A payment fails, and most businesses either retry it blindly (wasting
 effort on hopeless cases) or write it off entirely (losing money that was
 genuinely recoverable). Winback tries to tell the difference.
+
+
+## Live Demo
+
+https://razorguard-frontend.onrender.com/
 
 ## What it actually does
 
