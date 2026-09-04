@@ -1,65 +1,181 @@
 /* MockCheckout.css
-   Colors match Razorpay's confirmed brand palette:
-   Prussian Blue #012652 (deep navy), Dodger Blue #0D94FB (action blue), white.
-   Not their logo/typeface -- brand-inspired styling only.
+   Brand-inspired palette (Prussian Blue #012652, Dodger Blue #0D94FB,
+   gold accent for the coin/banner) -- layout is generic checkout-page
+   convention, not a reproduction of any specific product's UI.
 */
 
-.mock-checkout-wrapper {
+.checkout-wrapper {
   display: flex;
   justify-content: center;
-  padding: 40px 16px;
+  padding: 32px 16px;
   font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
 }
 
-.mock-checkout-card {
+.checkout-card {
   width: 100%;
-  max-width: 420px;
+  max-width: 900px;
   background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(1, 38, 82, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(1, 38, 82, 0.18);
   overflow: hidden;
 }
 
-.mock-checkout-header {
-  background: linear-gradient(135deg, #012652 0%, #0D94FB 140%);
+.checkout-banner {
+  background: linear-gradient(90deg, #f5c94222, #f5c94222);
+  background-color: #fff4d6;
+  color: #8a6300;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 10px;
+}
+
+.checkout-body {
+  display: flex;
+  min-height: 520px;
+}
+
+/* ---------- Left summary panel ---------- */
+.checkout-summary {
+  width: 300px;
+  background: linear-gradient(160deg, #012652 0%, #023b6e 100%);
   color: #ffffff;
-  padding: 28px 24px 22px;
-  position: relative;
-}
-
-.mock-checkout-badge {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  font-weight: 700;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  padding: 3px 8px;
-  border-radius: 4px;
-}
-
-.mock-checkout-header h2 {
-  margin: 4px 0 6px;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.mock-checkout-amount {
-  font-size: 28px;
-  font-weight: 700;
-  margin: 0;
-}
-
-.mock-checkout-form {
-  padding: 22px 24px 26px;
+  padding: 32px 28px;
   display: flex;
   flex-direction: column;
+}
+
+.merchant-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.merchant-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.merchant-name {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.merchant-domain {
+  font-size: 12px;
+  color: #a8c3e0;
+}
+
+.amount-due-label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #a8c3e0;
+  margin-bottom: 6px;
+}
+
+.amount-due-value {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 32px;
+}
+
+.summary-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 18px;
+  flex: 1;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.summary-row span:first-child {
+  color: #a8c3e0;
+}
+
+.summary-row span:last-child {
+  font-weight: 600;
+  text-align: right;
+}
+
+.secured-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #a8c3e0;
+  margin-top: 20px;
+}
+
+.secured-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+}
+
+/* ---------- Right form side ---------- */
+.checkout-form-side {
+  flex: 1;
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.method-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e6edf5;
+}
+
+.method-tab {
+  background: none;
+  border: none;
+  padding: 10px 4px;
+  margin-right: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #7c92ad;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.method-tab.active {
+  color: #012652;
+  border-bottom-color: #0D94FB;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field-row {
+  display: flex;
   gap: 14px;
 }
 
-.mock-checkout-form label {
+.field-row label {
+  flex: 1;
+}
+
+.checkout-form label {
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -68,58 +184,89 @@
   color: #012652;
 }
 
-.mock-checkout-form input,
-.mock-checkout-form select {
+.checkout-form input,
+.checkout-form select {
   border: 1.5px solid #d7e3f0;
-  border-radius: 6px;
-  padding: 10px 12px;
+  border-radius: 8px;
+  padding: 11px 13px;
   font-size: 14px;
   color: #012652;
   outline: none;
-  transition: border-color 0.15s ease;
 }
 
-.mock-checkout-form input:focus,
-.mock-checkout-form select:focus {
+.checkout-form input:focus,
+.checkout-form select:focus {
   border-color: #0D94FB;
 }
 
-.mock-checkout-legend {
-  font-size: 12px;
-  color: #5b7fa6;
-  margin-top: -6px;
-}
-
-.mock-checkout-pay-btn {
-  margin-top: 6px;
+.pay-btn {
+  margin-top: 8px;
   background: #0D94FB;
   color: #ffffff;
   border: none;
-  border-radius: 6px;
-  padding: 12px;
-  font-size: 15px;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.15s ease;
 }
 
-.mock-checkout-pay-btn:hover {
+.pay-btn:hover {
   background: #0b82db;
 }
 
-.mock-checkout-error {
+.checkout-error {
   color: #c0392b;
   font-size: 12px;
 }
 
-.mock-checkout-timeline {
-  padding: 22px 24px 26px;
+.pci-note {
+  font-size: 11px;
+  color: #9aacc2;
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* ---------- Coin spin (processing step) ---------- */
+.coin-processing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 50px 0 30px;
+}
+
+.coin {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff2c4, #e8b923 60%, #a97b0a 100%);
+  box-shadow: 0 4px 14px rgba(169, 123, 10, 0.4);
+  animation: coin-flip 0.9s linear infinite;
+}
+
+@keyframes coin-flip {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.coin-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #012652;
+}
+
+/* ---------- Timeline (post-processing steps) ---------- */
+.checkout-timeline {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  flex: 1;
+  justify-content: center;
 }
 
-.mock-checkout-row {
+.timeline-row {
   display: flex;
   gap: 12px;
   padding: 10px 0;
@@ -127,12 +274,12 @@
   transition: opacity 0.3s ease;
 }
 
-.mock-checkout-row.active,
-.mock-checkout-row.done {
+.timeline-row.active,
+.timeline-row.done {
   opacity: 1;
 }
 
-.mock-checkout-dot {
+.timeline-dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -141,19 +288,19 @@
   flex-shrink: 0;
 }
 
-.mock-checkout-row.active .mock-checkout-dot {
+.timeline-row.active .timeline-dot {
   background: #0D94FB;
   box-shadow: 0 0 0 4px rgba(13, 148, 251, 0.2);
   animation: pulse 1s infinite;
 }
 
-.mock-checkout-row.done .mock-checkout-dot {
+.timeline-row.done .timeline-dot {
   background: #012652;
 }
 
-.mock-checkout-row.tone-warn .mock-checkout-dot { background: #e0a800; }
-.mock-checkout-row.tone-success .mock-checkout-dot { background: #1a9e5c; }
-.mock-checkout-row.tone-fail .mock-checkout-dot { background: #c0392b; }
+.timeline-row.tone-warn .timeline-dot { background: #e0a800; }
+.timeline-row.tone-success .timeline-dot { background: #1a9e5c; }
+.timeline-row.tone-fail .timeline-dot { background: #c0392b; }
 
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 rgba(13, 148, 251, 0.35); }
@@ -161,13 +308,13 @@
   100% { box-shadow: 0 0 0 0 rgba(13, 148, 251, 0); }
 }
 
-.mock-checkout-row-text {
+.timeline-text {
   font-size: 14px;
   color: #012652;
   font-weight: 600;
 }
 
-.mock-checkout-detail {
+.timeline-detail {
   font-size: 12px;
   font-weight: 400;
   color: #5b7fa6;
@@ -175,17 +322,27 @@
   line-height: 1.4;
 }
 
-.mock-checkout-reset-btn {
-  margin-top: 14px;
+.reset-btn {
+  margin-top: 18px;
+  align-self: center;
   background: none;
   border: 1.5px solid #0D94FB;
   color: #0D94FB;
-  border-radius: 6px;
-  padding: 10px;
+  border-radius: 8px;
+  padding: 10px 20px;
   font-weight: 600;
   cursor: pointer;
 }
 
-.mock-checkout-reset-btn:hover {
+.reset-btn:hover {
   background: #eaf5ff;
+}
+
+@media (max-width: 700px) {
+  .checkout-body {
+    flex-direction: column;
+  }
+  .checkout-summary {
+    width: auto;
+  }
 }

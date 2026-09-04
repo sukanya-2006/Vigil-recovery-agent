@@ -9,13 +9,13 @@
  * outcome is faked -- only the "card" itself is fake, same as any sandbox
  * checkout.
  *
- * Wire this into server/src/app.js (or wherever your other routers are
- * mounted) with something like:
+ * Wire this into server/src/index.js with:
  *   app.use('/api/demo', require('./routes/demo')(prisma));
  */
 
 const express = require('express');
 const { processTransaction } = require('../services/agent');
+const { logDemoStart } = require('../utils/consoleLogger');
 const { TRANSACTION_STATUS, FAILURE_REASON } = require('../constants');
 
 // Test card numbers -> the failure reason they simulate. Shown to the
@@ -33,7 +33,6 @@ const TEST_CARD_MAP = {
 module.exports = (prisma) => {
   const router = express.Router();
 
-  // So the frontend can render the legend without hardcoding it twice.
   router.get('/test-cards', (req, res) => {
     res.json(
       Object.entries(TEST_CARD_MAP).map(([number, failureReason]) => ({
@@ -51,10 +50,6 @@ module.exports = (prisma) => {
       const failureReason = TEST_CARD_MAP[cleanCard] || FAILURE_REASON.OTHER;
       const parsedAmount = Number(amount) || 999;
 
-      // Reuse an existing "Demo Customer" if one exists, so repeated demo
-      // runs build up believable history instead of starting from zero
-      // reliability every time -- makes later demo runs more interesting
-      // since the customer's successRate climbs.
       let customer = await prisma.customer.findFirst({
         where: { name: customerName || 'Demo Customer' },
       });
@@ -81,8 +76,13 @@ module.exports = (prisma) => {
         data: { transactionId: transaction.id, attemptNumber: 1, outcome: 'FAILURE' },
       });
 
-      // Run the REAL pipeline -- real rules score, real ML call, real
-      // AgentAction row written to the audit trail.
+      logDemoStart({
+        transactionId: transaction.id,
+        amount: parsedAmount,
+        failureReason,
+        customerName: customer.name,
+      });
+
       const { decision, executionResult, newStatus } = await processTransaction(prisma, transaction);
 
       res.json({
