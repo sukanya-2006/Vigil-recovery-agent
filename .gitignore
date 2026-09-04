@@ -12,3 +12,11 @@ client/dist/
 
 # Editor/OS
 .DS_Store
+
+# Python virtual environment
+ml/venv/
+__pycache__/
+*.pyc
+
+# Local database backup
+server/prisma/dev.db.backup
