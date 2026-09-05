@@ -73,8 +73,11 @@ async function getMlScore(transaction, candidateActionType) {
     const res = await fetch(`${ML_SERVICE_URL}/predict`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      // Short timeout keeps a stalled ML service from stalling a decision
-      signal: AbortSignal.timeout(400),
+      // Timeout raised for production: on Render, this is a real network
+      // call between two separate hosted services (not localhost), which
+      // routinely takes longer than a same-machine call. 400ms was tuned
+      // for local dev only and was causing every deployed call to time out.
+      signal: AbortSignal.timeout(8000),
       body: JSON.stringify({
         amount: transaction.amount,
         currency: transaction.currency,
