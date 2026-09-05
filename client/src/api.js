@@ -1,8 +1,10 @@
 // Every fetch call to the backend goes through here -- one place to
 // change the base URL later (e.g. when deploying), instead of hunting
 // through every component for a hardcoded localhost address.
-const BASE_URL =
-  import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
+//
+// VITE_API_BASE is set in Render's Static Site environment variables when
+// deployed; locally, with no env var set, it falls back to localhost.
+const BASE_URL = import.meta.env.VITE_API_BASE || 'http://localhost:4000/api';
 
 async function request(path, options) {
   const res = await fetch(`${BASE_URL}${path}`, {
@@ -33,4 +35,5 @@ export const api = {
       method: 'POST',
       body: JSON.stringify({ cardNumber, amount, customerName }),
     }),
+  getHinglishOffer: (id) => request(`/agent/hinglish-offer/${id}`, { method: 'POST' }),
 };

@@ -4,7 +4,7 @@ const { decideApprovedAction } = require('../services/decisionEngine');
 const { simulateExecution } = require('../services/outcomeSimulator');
 const { TRANSACTION_STATUS, ACTION_TYPE } = require('../constants');
 const { generateCustomerMessage } = require('../services/messageGenerator');
-
+const { agentic_call_offer_plan } = require('../services/hinglishRecoveryAgent');
 module.exports = (prisma) => {
   const router = express.Router();
 
@@ -128,5 +128,32 @@ module.exports = (prisma) => {
     }
   });
 
+
+  router.post('/hinglish-offer/:id', async (req, res) => {
+  try {
+    const id = Number(req.params.id);
+    const transaction = await prisma.transaction.findUnique({
+      where: { id },
+      include: { customer: true },
+    });
+    if (!transaction) return res.status(404).json({ error: 'Not found' });
+
+    const result = await agentic_call_offer_plan({
+      customerName: transaction.customer.name,
+      amount: transaction.amount,
+      failureReason: transaction.failureReason,
+      retryCount: transaction.retryCount,
+    });
+
+    if (!result.message) {
+      return res.status(502).json({ error: `Hinglish offer generation failed: ${result.error}` });
+    }
+
+    res.json({ message: result.message, model: result.model });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Hinglish offer generation failed' });
+  }
+});
   return router;
 };
