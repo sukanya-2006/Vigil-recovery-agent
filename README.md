@@ -143,3 +143,75 @@ razorguard/
 │
 └── docs/
     └── architecture.svg
+
+
+
+## Running it locally
+
+**1. ML service** (its own terminal):
+```bash
+cd ml/model
+python -m venv venv
+venv\Scripts\Activate.ps1        # Windows; `source venv/bin/activate` on macOS/Linux
+pip install -r requirements.txt
+python train_model.py --data ../data/transactions.csv --out .
+uvicorn serve:app --port 8001
+```
+Leave this running. Check `http://localhost:8001/health`.
+
+**2. Backend** (a second terminal):
+```bash
+cd server
+npm install
+cp .env.example .env
+npx prisma migrate dev --name init
+npm run seed
+npm run dev
+```
+Server runs at `http://localhost:4000`. Check `http://localhost:4000/health`.
+
+**3. Frontend** (a third terminal):
+```bash
+cd client
+npm install
+npm run dev
+```
+Dashboard runs at `http://localhost:5173`.
+
+Click **"Run agent on open transactions"** on Overview to process a batch — click it a few times to let in-progress retries resolve. Use **Make a Payment** to run a single transaction through the pipeline live, and **Live Console** to watch decisions print in real time from either source.
+
+## Example results
+
+*(Re-run before recording your final numbers — these are illustrative from development and will shift as retries, human-review decisions, and live-demo transactions change the dataset.)*
+
+| Metric | Value |
+|---|---|
+| Recovered by the agent | ₹27,65,101 (359 of 641, 56.0%) |
+| Control group (untouched) | ~15.6% recovered organically |
+| Agent lift | ~+30 percentage points over doing nothing |
+| Model AUC vs. rules-only AUC | see `ml/model/metrics.json` |
+
+## The ML layer, honestly
+
+We didn't want to ship a rules-only engine and call it "AI" just to check a box — but we also didn't want to overclaim what a same-day ML model trained on synthetic data actually proves. Here's the honest version:
+
+- The classifier is trained on this project's own generated transaction history, not real payment gateway data — a standard, defensible approach without production data access, but a real limitation worth naming.
+- Our model's AUC is notably higher than the rules baseline. This is largely because our synthetic outcome simulator is close to deterministic given its inputs, so the model recovers nearly all the learnable signal available. We'd expect this gap to narrow against noisier, real-world outcomes.
+- The rules/ML blend is currently a fixed 50/50 weighting — a reasonable starting point, not something validated against alternatives.
+- The ML service is genuinely load-bearing, not decorative: it can and does override the rules engine's candidate decision when the two scores disagree enough (visible in the audit trail as differing `ruleScore` vs. `mlScore` vs. the final blended `recoveryScore`).
+
+## Honest limitations
+
+- **No real payment gateway is called.** "Recovered" means the outcome simulator, using the same probability the decision engine computed, determined the action would have succeeded. This is a simulation, not a live transaction.
+- **The ML model's strong performance is partly an artifact of a low-noise synthetic simulator** (see above) — not a claim of production-ready calibration.
+- **The cost-aware override rarely triggers** at the current synthetic data's amount range — it would matter more for a merchant with many very small-ticket transactions.
+- **Customer-facing messages (plain-language and Hinglish) are drafts for a human to send** — nothing in the system actually places a call or sends a WhatsApp/SMS message automatically.
+- **The live checkout UI's visual style** is inspired by common payment-gateway UX conventions (color palette, layout rhythm) for demo realism. It is not, and is not intended to represent, any specific company's actual product interface.
+- **No automated test suite** — verification during development was manual, given the project's time constraints.
+
+## Possible next steps
+
+- Validate the rules/ML blend weight against held-out data instead of a fixed 50/50 split.
+- Retrain against noisier or partially real-world-sourced outcome data for a more production-honest AUC.
+- A live policy simulator: drag a confidence threshold and watch the recovery rate / false-positive trade-off change in real time.
+- Extend the customer-facing message generator with tone/channel options (SMS vs. email vs. WhatsApp), and real send integration once a human approves a draft.
